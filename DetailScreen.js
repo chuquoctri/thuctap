@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   pageTitle: {
-    fontSize: 30,
+    fontSize: 32,
     color: 'white',
   },
   whiteLine: {
