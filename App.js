@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './HomeScreen';
 import VODScreen from './VODScreen';
 import GiaiTriScreen from './GiaiTriScreen';
-import DetailScreen from './DetailScreen';
+import DetailScreen from './AmThuc_AnGiScreen';
 
 const Stack = createStackNavigator();
 

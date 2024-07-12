@@ -11,10 +11,17 @@ import {createStackNavigator} from '@react-navigation/stack';
 import VODScreen from './VODScreen';
 import HomeScreen from './HomeScreen';
 import GiaiTriScreen from './GiaiTriScreen';
+
 import AmThucScreen from './AmThucScreen';
+import DetailScreen from './AmThuc_AnGiScreen';
+import AmThuc_CaPheScreen from './AmThuc_CaPheScreen';
+import AmThuc_NhaHangScreen from './AmThuc_NhaHangScreen';
+
+
 import DuLichScreen from './DuLichScreen';
 import ThuVienScreen from './ThuVienScreen';
-import DetailScreen from './DetailScreen';
+import AmThuc_DacSanScreen from './AmThuc_DacSanScreen';
+
 
 const Stack = createStackNavigator();
 
@@ -29,10 +36,15 @@ const MainApp = () => {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="VOD" component={VODScreen} />
         <Stack.Screen name="GiaiTriScreen" component={GiaiTriScreen} />
+
         <Stack.Screen name="AmThucScreen" component={AmThucScreen} />
+        <Stack.Screen name="Detail" component={DetailScreen} />
+        <Stack.Screen name="AmThuc_CaPheScreen" component={AmThuc_CaPheScreen} />
+        <Stack.Screen name='AmThuc_NhaHangScreen' component={AmThuc_NhaHangScreen}/>
+        <Stack.Screen name='AmThuc_DacSanScreen' component={AmThuc_DacSanScreen}/>
+
         <Stack.Screen name="DuLichScreen" component={DuLichScreen} />
         <Stack.Screen name="ThuVienScreen" component={ThuVienScreen} />
-        <Stack.Screen name="Detail" component={DetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -13,63 +13,42 @@ const {height: windowHeight} = Dimensions.get('window');
 
 const dishes = [
   {
-    name: 'Bún bò huế',
-    image: require('./assets/angi_1.jpg'),
+    name: 'Sheraton Nha Trang',
+    image: require('./assets/nhahang_2.webp'),
     info: 'Khi "nhập cư" vào thành phố biển Nha Trang xinh đẹp,món Bún Bò nức tiếng xứ Huế đã có ít nhiều biến tấuđể hợp khẩu vị với người dân địa phương hơn nhưngvẫn giữ được chất Huế thân thuộc.Gọi Bún Bò là món ăn dễ tính cũng đúng vì có thể dùngkèm với các loại rau thơm, xà lách và cũng có thể ănvới các loại rau xắt ghém như bắp chuối, giá cọng nhỏ.Nhưng nói Bún Bò là món ăn khó tính cũng không saivì để lột tả đúng hương thơm đậm đà của xứ Huế, đòihỏi người đầu bếp phải thật "kỳ công" vào nồi nước dùng. Nước sốt chấm thịt có thể là chén nước mắm xắt ớt và cũng có thể là chén tương ớt trộn sa tế sả. Ghé Yasaka Saigon Nhatrang, bạn sẽ được thưởng thức một tô bún với nước lèo ngon ngọt đậm vị xương cũng sợi bún to, dùng kèm với các loại thịt nạm, chả thơm ngon và những cọng rau xanh tươi rói.',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
   {
-    name: 'Miến lươn',
-    image: require('./assets/angi_2.jpg'),
-    info: 'Thông tin chi tiết về Miến lươn...',
+    name: 'NGON Gallery Nha Trang',
+    image: require('./assets/nhahang_3.webp'),
+    info: 'Khi "nhập cư" vào thành phố biển Nha Trang xinh đẹp,món Bún Bò nức tiếng xứ Huế đã có ít nhiều biến tấuđể hợp khẩu vị với người dân địa phương hơn nhưngvẫn giữ được chất Huế thân thuộc.Gọi Bún Bò là món ăn dễ tính cũng đúng vì có thể dùngkèm với các loại rau thơm, xà lách và cũng có thể ănvới các loại rau xắt ghém như bắp chuối, giá cọng nhỏ.Nhưng nói Bún Bò là món ăn khó tính cũng không saivì để lột tả đúng hương thơm đậm đà của xứ Huế, đòihỏi người đầu bếp phải thật "kỳ công" vào nồi nước dùng. Nước sốt chấm thịt có thể là chén nước mắm xắt ớt và cũng có thể là chén tương ớt trộn sa tế sả. Ghé Yasaka Saigon Nhatrang, bạn sẽ được thưởng thức một tô bún với nước lèo ngon ngọt đậm vị xương cũng sợi bún to, dùng kèm với các loại thịt nạm, chả thơm ngon và những cọng rau xanh tươi rói.',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 2, Đường ABC',
   },
   {
-    name: 'Phở đá nóng',
-    image: require('./assets/angi_3.jpg'),
-    info: 'Thông tin chi tiết về Phở đá nóng...',
+    name: ' Ambassador Club',
+    image: require('./assets/nhahang_4.webp'),
+    info: 'Khi "nhập cư" vào thành phố biển Nha Trang xinh đẹp,món Bún Bò nức tiếng xứ Huế đã có ít nhiều biến tấuđể hợp khẩu vị với người dân địa phương hơn nhưngvẫn giữ được chất Huế thân thuộc.Gọi Bún Bò là món ăn dễ tính cũng đúng vì có thể dùngkèm với các loại rau thơm, xà lách và cũng có thể ănvới các loại rau xắt ghém như bắp chuối, giá cọng nhỏ.Nhưng nói Bún Bò là món ăn khó tính cũng không saivì để lột tả đúng hương thơm đậm đà của xứ Huế, đòihỏi người đầu bếp phải thật "kỳ công" vào nồi nước dùng. Nước sốt chấm thịt có thể là chén nước mắm xắt ớt và cũng có thể là chén tương ớt trộn sa tế sả. Ghé Yasaka Saigon Nhatrang, bạn sẽ được thưởng thức một tô bún với nước lèo ngon ngọt đậm vị xương cũng sợi bún to, dùng kèm với các loại thịt nạm, chả thơm ngon và những cọng rau xanh tươi rói.',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
-    address: 'Địa chỉ: Số 3, Đường ABC',
+    address: 'Địa chỉ: Số 2, Đường ABC',
   },
   {
-    name: 'Bánh cuốn - chả mực',
-    image: require('./assets/angi_4.jpg'),
-    info: 'Thông tin chi tiết về Bánh cuốn - chả mực...',
+    name: 'Novotel Nha Trang',
+    image: require('./assets/nhahang_5.webp'),
+    info: 'Khi "nhập cư" vào thành phố biển Nha Trang xinh đẹp,món Bún Bò nức tiếng xứ Huế đã có ít nhiều biến tấuđể hợp khẩu vị với người dân địa phương hơn nhưngvẫn giữ được chất Huế thân thuộc.Gọi Bún Bò là món ăn dễ tính cũng đúng vì có thể dùngkèm với các loại rau thơm, xà lách và cũng có thể ănvới các loại rau xắt ghém như bắp chuối, giá cọng nhỏ.Nhưng nói Bún Bò là món ăn khó tính cũng không saivì để lột tả đúng hương thơm đậm đà của xứ Huế, đòihỏi người đầu bếp phải thật "kỳ công" vào nồi nước dùng. Nước sốt chấm thịt có thể là chén nước mắm xắt ớt và cũng có thể là chén tương ớt trộn sa tế sả. Ghé Yasaka Saigon Nhatrang, bạn sẽ được thưởng thức một tô bún với nước lèo ngon ngọt đậm vị xương cũng sợi bún to, dùng kèm với các loại thịt nạm, chả thơm ngon và những cọng rau xanh tươi rói.',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
-    address: 'Địa chỉ: Số 4, Đường ABC',
-  },
-  {
-    name: 'Bánh canh chả cá',
-    image: require('./assets/dulich_6.jpg'),
-    info: 'Thông tin chi tiết về Bánh canh chả cá...',
-    hours: 'Giờ mở cửa: 6:00 - 22:00',
-    address: 'Địa chỉ: Số 5, Đường ABC',
-  },
-  {
-    name: 'Bánh canh mực',
-    image: require('./assets/giaitri_1.jpg'),
-    info: 'Thông tin chi tiết về Bánh canh mực...',
-    hours: 'Giờ mở cửa: 6:00 - 22:00',
-    address: 'Địa chỉ: Số 6, Đường ABC',
-  },
-  {
-    name: 'Bún sứa',
-    image: require('./assets/giaitri_2.jpg'),
-    info: 'Thông tin chi tiết về Bún sứa...',
-    hours: 'Giờ mở cửa: 6:00 - 22:00',
-    address: 'Địa chỉ: Số 7, Đường ABC',
+    address: 'Địa chỉ: Số 2, Đường ABC',
   },
 ];
 
-const DishScreen = () => {
+const AmThuc_NhaHangScreen = () => {
   const [selectedDish, setSelectedDish] = useState(dishes[0]);
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.pageTitle}>Ăn gì ở đâu?</Text>
+        <Text style={styles.pageTitle}>Nhà hàng</Text>
         <View style={styles.whiteLine}></View>
       </View>
       <View style={styles.body}>
@@ -143,7 +122,7 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '50%',
-    resizeMode: 'cover', // hoặc "stretch" tùy vào yêu cầu của bạn
+    resizeMode: 'cover',
   },
   infoContainer: {
     width: '40%',
@@ -172,4 +151,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DishScreen;
+export default AmThuc_NhaHangScreen;

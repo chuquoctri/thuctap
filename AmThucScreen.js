@@ -22,7 +22,19 @@ const AmThucScreen = () => {
 
   const handleLocationPress = index => {
     setSelectedLocationIndex(index);
-    navigation.navigate('Detail', location[index]);
+    if (index === 0) {
+      navigation.navigate('Detail', {location: location[index]});
+    } else if (index === 1) {
+      navigation.navigate('AmThuc_CaPheScreen', {location: location[index]});
+    } 
+    else if (index === 2) {
+      navigation.navigate('AmThuc_NhaHangScreen', {location: location[index]});
+    } else if (index === 3) {
+      navigation.navigate('AmThuc_DacSanScreen', {location: location[index]});
+    } else {
+      // Handle navigation for other items if needed
+      console.log('Navigate to detailed screen of:', location[index].name);
+    }
   };
 
   return (
@@ -35,16 +47,16 @@ const AmThucScreen = () => {
         contentContainerStyle={styles.slideshow}
         horizontal={true}
         showsHorizontalScrollIndicator={false}>
-        {location.map((location, index) => (
+        {location.map((item, index) => (
           <TouchableOpacity
             key={index}
             style={[
               styles.slide,
-              selectedLocationIndex == index && styles.selected,
+              selectedLocationIndex === index && styles.selected,
             ]}
             onPress={() => handleLocationPress(index)}>
-            <Image source={location.image} style={styles.image} />
-            <Text style={styles.imageText}>{location.name}</Text>
+            <Image source={item.image} style={styles.image} />
+            <Text style={styles.imageText}>{item.name}</Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
