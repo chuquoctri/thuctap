@@ -78,8 +78,18 @@ const DishScreen = () => {
             {dishes.map((dish, index) => (
               <TouchableOpacity
                 key={index}
-                onPress={() => setSelectedDish(dish)}>
-                <Text style={styles.menuItem}>{dish.name}</Text>
+                onPress={() => setSelectedDish(dish)}
+                style={styles.menuItemContainer}>
+                <Text
+                  style={[
+                    styles.menuItem,
+                    selectedDish.name === dish.name && styles.selectedMenuItem,
+                  ]}>
+                  {dish.name}
+                </Text>
+                {selectedDish.name === dish.name && (
+                  <Text style={styles.menuArrow}> ▶</Text>
+                )}
               </TouchableOpacity>
             ))}
           </ScrollView>
@@ -132,9 +142,22 @@ const styles = StyleSheet.create({
   menu: {
     width: '20%',
   },
+  menuItemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
+  },
   menuItem: {
     color: 'white',
-    paddingVertical: 20,
+  
+    fontSize: 17,
+  },
+  selectedMenuItem: {
+    color: 'yellow',
+  },
+  menuArrow: {
+    color: 'yellow',
     fontSize: 17,
   },
   imageContainer: {
@@ -143,7 +166,7 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '50%',
-    resizeMode: 'cover', // hoặc "stretch" tùy vào yêu cầu của bạn
+    resizeMode: 'cover',
   },
   infoContainer: {
     width: '40%',

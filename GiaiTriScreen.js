@@ -23,7 +23,14 @@ const GiaiTriScreen = () => {
 
   const handleLocationPress = index => {
     setSelectedLocationIndex(index);
-    navigation.navigate('Detail', locations[index]);
+    if(index===0){
+     navigation.navigate('GiaiTri_CongVienScreen', {locations:locations[index]});
+    }else if(index===1){
+      navigation.navigate('GiaiTri_SanKhauScreen',{locations:locations[index]});
+    }else if(index===2){
+      navigation.navigate('GiaiTri_CauLacBoScreen',{locations:locations[index]});
+    }
+   
   };
 
   return (

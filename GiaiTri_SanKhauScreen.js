@@ -8,46 +8,44 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-
-const {height: windowHeight} = Dimensions.get('window');
-
+const {height:windowHeight} = Dimensions.get('window');
 const dishes = [
   {
-    name: ' Công viên nước Golden Peak Park',
-    image: require('./assets/congvien_1.jpg'),
-    info: 'Thong tin cong vien nuoc',
-    hours: 'Giờ mở cửa: 6:00 - 22:00',
-    address: 'Địa chỉ: Số 1, Đường ABC',
-  },
-  {
-    name: ' Công viên phao nổi SeaLife Nha Trang',
-    image: require('./assets/congvien_2.jpg'),
+    name: 'Festival biển Nha Trang',
+    image: require('./assets/sankhau_3.webp'),
     info: 'Th tin Công viên phao nổi SeaLife Nha Trang ',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
   {
-    name: 'Khu du lịch Waterland Suối Thạch Lâm',
-    image: require('./assets/congvien_3.jpg'),
-    info: 'Thông tin Khu du lịch Waterland Suối Thạch Lâm',
+    name: 'Sân khấu nhạc nước',
+    image: require('./assets/sankhau_1.jpg'),
+    info: 'Thong tin san khau nhac nuoc',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
   {
-    name: 'Công viên nước Nha Trang',
-    image: require('./assets/congvien_4.jpg'),
-    info: 'Thông tin công viên nước Nha Trang',
+    name: ' Nhà hát tuồng Khánh Hòa',
+    image: require('./assets/sankhau_2.jpg'),
+    info: 'Th tin nha hat tuong khanh hoa ',
+    hours: 'Giờ mở cửa: 6:00 - 22:00',
+    address: 'Địa chỉ: Số 1, Đường ABC',
+  },
+  {
+    name: ' Sân khấu giữa trùng khơi',
+    image: require('./assets/sankhau_4.jpg'),
+    info: 'Th tin Công viên phao nổi SeaLife Nha Trang ',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
 ];
 
-const GiaiTri_CongVienScreen = () => {
+const GiaiTri_SanKhauScreen = () => {
   const [selectedDish, setSelectedDish] = useState(dishes[0]);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.pageTitle}>Công viên</Text>
+        <Text style={styles.pageTitle}>Sân khấu</Text>
         <View style={styles.whiteLine}></View>
       </View>
       <View style={styles.body}>
@@ -112,66 +110,64 @@ const styles = StyleSheet.create({
     marginLeft: 23,
     marginTop: 15,
   },
-  body:{
-    flex:1,
-    flexDirection:'row',
-    marginTop:20,
+  body: {
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: 20,
   },
-  menu:{
-    width:'21%',
+  menu: {
+    width: '21%',
   },
-  menuItemContainer:{
-    flexDirection:'row',
-    alignItems:"center",
-    justifyContent:'space-between',
-    paddingVertical:20,
+  menuItemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
   },
-  menuItem:{
-    color:'white',
-    fontSize:17,
+  menuItem: {
+    color: 'white',
+    fontSize: 17,
   },
-  selectedMenuItem:{
-    color:'yellow'
+  selectedMenuItem: {
+    color: 'yellow',
   },
-  menuArrow:{
-    color:'yellow',
-    fontSize:17,
+  menuArrow: {
+    color: 'yellow',
+    fontSize: 17,
   },
-  imageContainer:{
-    width:'40%',
+  imageContainer: {
+    width: '40%',
   },
-  image:{
-    width:'100%',
-    height:'50%',
-    resizeMode:'cover',
+  image: {
+    width: '100%',
+    height: '50%',
+    resizeMode: 'cover',
   },
-  infoContainer:{
-    width:'40%',
-    paddingLeft:10,
+  infoContainer: {
+    width: '40%',
+    paddingLeft: 10,
   },
-  dishName:{
-    color:'white',
-    fontSize:20,
-    marginBottom:10,
+  dishName: {
+    color: 'white',
+    fontSize: 20,
+    marginBottom: 10,
   },
-  dishInfo:{
-    color:'white',
-    marginBottom:10,
+  dishInfo: {
+    color: 'white',
+    marginBottom: 10,
   },
-  yellowLine:{
-    height:1,
-    backgroundColor:'yellow',
-    marginVertical:10,
+  yellowLine: {
+    height: 1,
+    backgroundColor: 'yellow',
+    marginVertical: 10,
   },
-  hours:{
-    color:'white',
-    marginBottom:5,
+  hours: {
+    color: 'white',
+    marginBottom: 5,
   },
-  address:{
-    color:'white'
-  }
-
-
+  address: {
+    color: 'white',
+  },
 });
 
-export default GiaiTri_CongVienScreen;
+export default GiaiTri_SanKhauScreen;

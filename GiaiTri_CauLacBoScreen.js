@@ -42,12 +42,12 @@ const dishes = [
   },
 ];
 
-const GiaiTri_CongVienScreen = () => {
+const GiaiTri_CauLacBoScreen = () => {
   const [selectedDish, setSelectedDish] = useState(dishes[0]);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.pageTitle}>Công viên</Text>
+        <Text style={styles.pageTitle}>Câu lạc bộ</Text>
         <View style={styles.whiteLine}></View>
       </View>
       <View style={styles.body}>
@@ -112,66 +112,64 @@ const styles = StyleSheet.create({
     marginLeft: 23,
     marginTop: 15,
   },
-  body:{
-    flex:1,
-    flexDirection:'row',
-    marginTop:20,
+  body: {
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: 20,
   },
-  menu:{
-    width:'21%',
+  menu: {
+    width: '21%',
   },
-  menuItemContainer:{
-    flexDirection:'row',
-    alignItems:"center",
-    justifyContent:'space-between',
-    paddingVertical:20,
+  menuItemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
   },
-  menuItem:{
-    color:'white',
-    fontSize:17,
+  menuItem: {
+    color: 'white',
+    fontSize: 17,
   },
-  selectedMenuItem:{
-    color:'yellow'
+  selectedMenuItem: {
+    color: 'yellow',
   },
-  menuArrow:{
-    color:'yellow',
-    fontSize:17,
+  menuArrow: {
+    color: 'yellow',
+    fontSize: 17,
   },
-  imageContainer:{
-    width:'40%',
+  imageContainer: {
+    width: '40%',
   },
-  image:{
-    width:'100%',
-    height:'50%',
-    resizeMode:'cover',
+  image: {
+    width: '100%',
+    height: '50%',
+    resizeMode: 'cover',
   },
-  infoContainer:{
-    width:'40%',
-    paddingLeft:10,
+  infoContainer: {
+    width: '40%',
+    paddingLeft: 10,
   },
-  dishName:{
-    color:'white',
-    fontSize:20,
-    marginBottom:10,
+  dishName: {
+    color: 'white',
+    fontSize: 20,
+    marginBottom: 10,
   },
-  dishInfo:{
-    color:'white',
-    marginBottom:10,
+  dishInfo: {
+    color: 'white',
+    marginBottom: 10,
   },
-  yellowLine:{
-    height:1,
-    backgroundColor:'yellow',
-    marginVertical:10,
+  yellowLine: {
+    height: 1,
+    backgroundColor: 'yellow',
+    marginVertical: 10,
   },
-  hours:{
-    color:'white',
-    marginBottom:5,
+  hours: {
+    color: 'white',
+    marginBottom: 5,
   },
-  address:{
-    color:'white'
-  }
-
-
+  address: {
+    color: 'white',
+  },
 });
 
-export default GiaiTri_CongVienScreen;
+export default GiaiTri_CauLacBoScreen;

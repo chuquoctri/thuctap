@@ -20,7 +20,7 @@ const dishes = [
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
   {
-    name: 'NGON Gallery Nha Trang',
+    name: 'Gallery Nha Trang',
     image: require('./assets/nhahang_3.webp'),
     info: 'Khi "nhập cư" vào thành phố biển Nha Trang xinh đẹp,món Bún Bò nức tiếng xứ Huế đã có ít nhiều biến tấuđể hợp khẩu vị với người dân địa phương hơn nhưngvẫn giữ được chất Huế thân thuộc.Gọi Bún Bò là món ăn dễ tính cũng đúng vì có thể dùngkèm với các loại rau thơm, xà lách và cũng có thể ănvới các loại rau xắt ghém như bắp chuối, giá cọng nhỏ.Nhưng nói Bún Bò là món ăn khó tính cũng không saivì để lột tả đúng hương thơm đậm đà của xứ Huế, đòihỏi người đầu bếp phải thật "kỳ công" vào nồi nước dùng. Nước sốt chấm thịt có thể là chén nước mắm xắt ớt và cũng có thể là chén tương ớt trộn sa tế sả. Ghé Yasaka Saigon Nhatrang, bạn sẽ được thưởng thức một tô bún với nước lèo ngon ngọt đậm vị xương cũng sợi bún to, dùng kèm với các loại thịt nạm, chả thơm ngon và những cọng rau xanh tươi rói.',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
@@ -57,8 +57,18 @@ const AmThuc_NhaHangScreen = () => {
             {dishes.map((dish, index) => (
               <TouchableOpacity
                 key={index}
-                onPress={() => setSelectedDish(dish)}>
-                <Text style={styles.menuItem}>{dish.name}</Text>
+                onPress={() => setSelectedDish(dish)}
+                style={styles.menuItemContainer}>
+                <Text
+                  style={[
+                    styles.menuItem,
+                    selectedDish.name === dish.name && styles.selectedMenuItem,
+                  ]}>
+                  {dish.name}
+                </Text>
+                {selectedDish.name === dish.name && (
+                  <Text style={styles.menuArrow}> ▶</Text>
+                )}
               </TouchableOpacity>
             ))}
           </ScrollView>
@@ -111,13 +121,25 @@ const styles = StyleSheet.create({
   menu: {
     width: '20%',
   },
+  menuItemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
+  },
   menuItem: {
     color: 'white',
-    paddingVertical: 20,
     fontSize: 17,
   },
   imageContainer: {
     width: '40%',
+  },
+  selectedMenuItem: {
+    color: 'yellow',
+  },
+  menuArrow: {
+    color: 'yellow',
+    fontSize: 17,
   },
   image: {
     width: '100%',

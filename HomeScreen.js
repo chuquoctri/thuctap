@@ -131,7 +131,7 @@ const App = () => {
                   source={require('./assets/location.png')}
                   style={styles.iconImage}
                 />
-                <Text style={styles.buttonText}>Tham quan</Text>
+                <Text style={styles.buttonText}>Du lịch</Text>
                 <Text style={styles.buttonText_2}>
                   Kế hoạch du lịch với nhiều
                 </Text>
@@ -150,7 +150,7 @@ const App = () => {
                   source={require('./assets/gallery.png')}
                   style={styles.iconImage}
                 />
-                <Text style={styles.buttonText}>Hình ảnh</Text>
+                <Text style={styles.buttonText}>Thư viện</Text>
                 <Text style={styles.buttonText_2}>Hình ảnh đẹp xung quanh</Text>
                 <Text style={styles.buttonText_2}>Khánh Hòa</Text>
               </TouchableOpacity>

@@ -5,9 +5,10 @@ import {
   Image,
   ScrollView,
   StyleSheet,
-  TouchableOpacity,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler'; // Import TouchableWithoutFeedback if using from react-native
 
 const ThuVienScreen = () => {
   const navigation = useNavigation();
@@ -20,10 +21,17 @@ const ThuVienScreen = () => {
     { name: 'Đảo Trí Nguyên', image: require('./assets/thuvien_3.jpg') },
   ];
 
-  const handleLocationPress = (index) => {
+  const handleLocationPress = index => {
     setSelectedLocationIndex(index);
-    // Chuyển hướng đến màn hình 'Detail' và truyền dữ liệu địa điểm
-    navigation.navigate('Detail', location[index]);
+    if (index === 0) {
+      navigation.navigate('ThuVien_DetailScreen', { location: location[index] });
+    }if (index === 1) {
+      navigation.navigate('ThuVien_ThapChamScreen', {location: location[index]});
+    }if (index === 2) {
+      navigation.navigate('ThuVien_LeHoiScreen', {location: location[index]});
+    }if (index === 3) {
+      navigation.navigate('ThuVien_DaoTNScreen', {location: location[index]});
+    }
   };
 
   return (
@@ -38,17 +46,20 @@ const ThuVienScreen = () => {
         showsHorizontalScrollIndicator={false}
       >
         {location.map((loc, index) => (
-          <TouchableOpacity
+          <TouchableWithoutFeedback
             key={index}
-            style={[
-              styles.slide,
-              selectedLocationIndex === index && styles.selected,
-            ]}
             onPress={() => handleLocationPress(index)}
           >
-            <Image source={loc.image} style={styles.image} />
-            <Text style={styles.imageText}>{loc.name}</Text>
-          </TouchableOpacity>
+            <View
+              style={[
+                styles.slide,
+                selectedLocationIndex === index && styles.selected,
+              ]}
+            >
+              <Image source={loc.image} style={styles.image} />
+              <Text style={styles.imageText}>{loc.name}</Text>
+            </View>
+          </TouchableWithoutFeedback>
         ))}
       </ScrollView>
     </View>

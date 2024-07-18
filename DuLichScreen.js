@@ -22,10 +22,17 @@ const DuLichScreen = () => {
     {name: 'Kong Forest', image: require('./assets/dulich_6.jpg')},
   ];
 
-  const handleLocationPress = index => {
-    setSelectedLocationIndex(index);
-    navigation.navigate('Detail', location[index]);
-  };
+ 
+ const handleLocationPress = index => {
+   setSelectedLocationIndex(index);
+   if (index === 0) {
+     navigation.navigate('DuLich_VinhNhaTrangScreen');
+   } else if (index === 1) {
+     navigation.navigate('DuLich_DaoKhiScreen');
+   } else if (index === 2) {
+     navigation.navigate('DuLich_TourUcScreen');
+   }
+ };
 
   return (
     <View style={styles.container}>

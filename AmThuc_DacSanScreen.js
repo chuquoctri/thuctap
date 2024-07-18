@@ -48,7 +48,7 @@ const AmThuc_DacSanScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.pageTitle}>Nhà hàng</Text>
+        <Text style={styles.pageTitle}>Đặc sản</Text>
         <View style={styles.whiteLine}></View>
       </View>
       <View style={styles.body}>
@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
     marginLeft: 23,
     marginTop: 15,
   },
+  
   body: {
     flex: 1,
     flexDirection: 'row',

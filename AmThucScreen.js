@@ -11,7 +11,7 @@ import {useNavigation} from '@react-navigation/native';
 
 const AmThucScreen = () => {
   const navigation = useNavigation();
-  const [selectedLocationIndex, setSelectedLocationIndex] = useState(null);
+  const [selectedLocationIndex, setSelectedLocationIndex] = useState(0);
 
   const location = [
     {name: 'Ăn gì ở đâu', image: require('./assets/amthuc_1.jpg')},
@@ -22,19 +22,29 @@ const AmThucScreen = () => {
 
   const handleLocationPress = index => {
     setSelectedLocationIndex(index);
-    if (index === 0) {
-      navigation.navigate('Detail', {location: location[index]});
-    } else if (index === 1) {
-      navigation.navigate('AmThuc_CaPheScreen', {location: location[index]});
-    } 
-    else if (index === 2) {
-      navigation.navigate('AmThuc_NhaHangScreen', {location: location[index]});
-    } else if (index === 3) {
-      navigation.navigate('AmThuc_DacSanScreen', {location: location[index]});
-    } else {
-      // Handle navigation for other items if needed
-      console.log('Navigate to detailed screen of:', location[index].name);
+    switch (index) {
+      case 0:
+        navigation.navigate('Detail', {location: location[index]});
+        break;
+      case 1:
+        navigation.navigate('AmThuc_CaPheScreen', {location: location[index]});
+        break;
+      case 2:
+        navigation.navigate('AmThuc_NhaHangScreen', {
+          location: location[index],
+        });
+        break;
+      case 3:
+        navigation.navigate('AmThuc_DacSanScreen', {location: location[index]});
+        break;
+      default:
+        console.log('Navigate to detailed screen of:', location[index].name);
+        break;
     }
+  };
+
+  const handleLocationFocus = index => {
+    setSelectedLocationIndex(index);
   };
 
   return (
@@ -54,7 +64,9 @@ const AmThucScreen = () => {
               styles.slide,
               selectedLocationIndex === index && styles.selected,
             ]}
-            onPress={() => handleLocationPress(index)}>
+            onPress={() => handleLocationPress(index)}
+            onFocus={() => handleLocationFocus(index)} // Xử lý khi focus vào phần tử
+          >
             <Image source={item.image} style={styles.image} />
             <Text style={styles.imageText}>{item.name}</Text>
           </TouchableOpacity>
