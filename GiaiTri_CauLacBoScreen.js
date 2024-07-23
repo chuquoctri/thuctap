@@ -13,29 +13,29 @@ const {height: windowHeight} = Dimensions.get('window');
 
 const dishes = [
   {
-    name: ' Công viên nước Golden Peak Park',
-    image: require('./assets/congvien_1.jpg'),
+    name: ' Nha Trang Sport Unite',
+    image: require('./assets/clb_1.jpg'),
     info: 'Thong tin cong vien nuoc',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
   {
-    name: ' Công viên phao nổi SeaLife Nha Trang',
-    image: require('./assets/congvien_2.jpg'),
+    name: ' NT Fitness Gym',
+    image: require('./assets/clb_2.jpg'),
     info: 'Th tin Công viên phao nổi SeaLife Nha Trang ',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
   {
-    name: 'Khu du lịch Waterland Suối Thạch Lâm',
-    image: require('./assets/congvien_3.jpg'),
+    name: 'Olympic Nha Trang Gym & Fitness',
+    image: require('./assets/clb_3.jpg'),
     info: 'Thông tin Khu du lịch Waterland Suối Thạch Lâm',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
   {
-    name: 'Công viên nước Nha Trang',
-    image: require('./assets/congvien_4.jpg'),
+    name: 'Venus Yoga & Fitness Center',
+    image: require('./assets/clb_4.jpg'),
     info: 'Thông tin công viên nước Nha Trang',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
@@ -157,6 +157,7 @@ const styles = StyleSheet.create({
   dishInfo: {
     color: 'white',
     marginBottom: 10,
+    height:'73%'
   },
   yellowLine: {
     height: 1,

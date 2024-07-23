@@ -8,35 +8,37 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
-// thông tin du lịch
+
+// Thông tin du lịch
 const slides = [
   {
     id: '1',
-    title: 'Bởi: Long Phu Tourist',
+    title: 'TOUR DU NGOẠN VỊNH NHA PHÚ',
     description:
       'Địa chỉ: Đá Chồng, Thôn Cát Lợi, Xã Vĩnh Lương, TP. Nha Trang, T. Khánh Hòa',
     image: require('./assets/Nhaphu.jpg'),
   },
   {
     id: '2',
-    title: 'Slide 2',
-    description: 'Thông tin của Slide 2',
+    title: 'ĐẢO HOA LAN KỲ THÚ',
+    description: 'Địa chỉ: Nha Trang - Khánh Hòa',
     image: require('./assets/daohoalan.jpg'),
   },
   {
     id: '3',
-    title: 'Slide 3',
-    description: 'Thông tin của Slide 3',
+    title: 'ĐẢO KHỈ NHA TRANG',
+    description: 'Địa chỉ: Nha Trang - Khánh Hòa',
     image: require('./assets/tournhaphu.jpg'),
   },
   {
     id: '4',
-    title: 'Slide 4',
-    description: 'Thông tin của Slide 4',
+    title: 'HOÀNG HÔN NHA PHÚ',
+    description: 'Địa chỉ: Nha Trang - Khánh Hòa',
     image: require('./assets/hoanghon.jpg'),
   },
 ];
-// thông tin nhà hàng
+
+// Thông tin nhà hàng
 const slides_nhahang = [
   {
     id: '1',
@@ -44,26 +46,9 @@ const slides_nhahang = [
     description: 'Thời lượng: 10p',
     image: require('./assets/nhahang.webp'),
   },
-  {
-    id: '2',
-    title: 'NHÀ HÀNG- CAFE SÂN VƯỜN YASAKA',
-    description: 'Thời lượng: 10p',
-    image: require('./assets/nhahang.webp'),
-  },
-  {
-    id: '3',
-    title: 'NHÀ HÀNG- CAFE SÂN VƯỜN YASAKA',
-    description: 'Thời lượng: 10p',
-    image: require('./assets/nhahang.webp'),
-  },
-  {
-    id: '4',
-    title: 'NHÀ HÀNG- CAFE SÂN VƯỜN YASAKA',
-    description: 'Thời lượng: 10p',
-    image: require('./assets/nhahang.webp'),
-  },
 ];
-// thông tin đặc sản
+
+// Thông tin đặc sản
 const slides_dacsan = [
   {
     id: '1',
@@ -71,26 +56,9 @@ const slides_dacsan = [
     description: 'Thời lượng: 10p',
     image: require('./assets/dacsan.jpg'),
   },
-  {
-    id: '2',
-    title: 'ĐÔNG TRÙNG HẠ THẢO TƯƠI',
-    description: 'Thời lượng: 10p',
-    image: require('./assets/dacsan.jpg'),
-  },
-  {
-    id: '3',
-    title: 'ĐÔNG TRÙNG HẠ THẢO TƯƠI',
-    description: 'Thời lượng: 10p',
-    image: require('./assets/dacsan.jpg'),
-  },
-  {
-    id: '4',
-    title: 'ĐÔNG TRÙNG HẠ THẢO TƯƠI',
-    description: 'Thời lượng: 10p',
-    image: require('./assets/dacsan.jpg'),
-  },
 ];
-// thông tin spa
+
+// Thông tin spa
 const slides_spa = [
   {
     id: '1',
@@ -98,28 +66,12 @@ const slides_spa = [
     description: 'Thời lượng: 10p',
     image: require('./assets/spa.webp'),
   },
-  {
-    id: '2',
-    title: 'TẮM BÙN KHOÁNG THÁP BÀ NHA TRANG',
-    description: 'Thời lượng: 10p',
-    image: require('./assets/spa.webp'),
-  },
-  {
-    id: '3',
-    title: 'TẮM BÙN KHOÁNG THÁP BÀ NHA TRANG',
-    description: 'Thời lượng: 10p',
-    image: require('./assets/spa.webp'),
-  },
-  {
-    id: '4',
-    title: 'TẮM BÙN KHOÁNG THÁP BÀ NHA TRANG',
-    description: 'Thời lượng: 10p',
-    image: require('./assets/spa.webp'),
-  },
 ];
+
 const App = () => {
   const [selectedSlide, setSelectedSlide] = useState(slides[0]);
   const [currentSlides, setCurrentSlides] = useState(slides);
+  const [selectedMenu, setSelectedMenu] = useState('VOD');
 
   const handleSlidePress = item => {
     setSelectedSlide(item); // Cập nhật slide được chọn
@@ -131,54 +83,56 @@ const App = () => {
     </TouchableOpacity>
   );
 
-  const handleVODPress = () => {
-    setCurrentSlides(slides); // Hiển thị danh sách slides khi chọn mục VOD
+  const handleMenuPress = (menu, slides) => {
+    setCurrentSlides(slides); // Hiển thị danh sách slides khi chọn mục
     setSelectedSlide(slides[0]); // Chọn slide đầu tiên của slides
-    console.log('VOD selected');
-  };
-
-  const handleDuLichPress = () => {
-    setCurrentSlides(slides); // Hiển thị danh sách slides khi chọn mục Du lịch
-    setSelectedSlide(slides[0]); // Chọn slide đầu tiên của slides
-    console.log('Du lịch selected');
-  };
-
-  const handleNhaHangPress = () => {
-    setCurrentSlides(slides_nhahang); // Hiển thị danh sách slides khách sạn khi chọn mục Khách sạn
-    setSelectedSlide(slides_nhahang[0]); // Chọn slide đầu tiên của slides_khachsan
-    console.log('Nhà hàng selected');
-  };
-
-  const handleDacSanPress = () => {
-    setCurrentSlides(slides_dacsan); // Hiển thị danh sách slides khi chọn mục Nhà Hàng
-    setSelectedSlide(slides_dacsan[0]); // Chọn slide đầu tiên của slides
-    console.log('Đặc sản selected');
-  };
-
-  const handleSpaPress = () => {
-    setCurrentSlides(slides_spa); // Hiển thị danh sách slides khi chọn mục Đặc sắc
-    setSelectedSlide(slides_spa[0]); // Chọn slide đầu tiên của slides
-    console.log('Spa selected');
+    setSelectedMenu(menu);
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.menu}>
         {/* Menu dọc */}
-        <TouchableOpacity onPress={handleVODPress}>
+        <View style={styles.pageTitle}>
           <Text style={styles.menuText}>VOD</Text>
+        </View>
+        <TouchableOpacity onPress={() => handleMenuPress('Du lịch', slides)}>
+          <Text
+            style={[
+              styles.menuText,
+              selectedMenu === 'Du lịch' && styles.selectedMenuText,
+            ]}>
+            Du lịch {selectedMenu === 'Du lịch' && '▶'}
+          </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleDuLichPress}>
-          <Text style={styles.menuText}>Du lịch</Text>
+        <TouchableOpacity
+          onPress={() => handleMenuPress('Nhà hàng', slides_nhahang)}>
+          <Text
+            style={[
+              styles.menuText,
+              selectedMenu === 'Nhà hàng' && styles.selectedMenuText,
+            ]}>
+            Nhà hàng {selectedMenu === 'Nhà hàng' && '▶'}
+          </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleNhaHangPress}>
-          <Text style={styles.menuText}>Nhà hàng</Text>
+        <TouchableOpacity
+          onPress={() => handleMenuPress('Đặc sản', slides_dacsan)}>
+          <Text
+            style={[
+              styles.menuText,
+              selectedMenu === 'Đặc sản' && styles.selectedMenuText,
+            ]}>
+            Đặc sản {selectedMenu === 'Đặc sản' && '▶'}
+          </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleDacSanPress}>
-          <Text style={styles.menuText}>Đặc sản</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={handleSpaPress}>
-          <Text style={styles.menuText}>Spa</Text>
+        <TouchableOpacity onPress={() => handleMenuPress('Spa', slides_spa)}>
+          <Text
+            style={[
+              styles.menuText,
+              selectedMenu === 'Spa' && styles.selectedMenuText,
+            ]}>
+            Spa {selectedMenu === 'Spa' && '▶'}
+          </Text>
         </TouchableOpacity>
       </View>
       <View style={styles.content}>
@@ -188,14 +142,11 @@ const App = () => {
             <Text style={styles.infoText_des}>{selectedSlide.description}</Text>
           </View>
           <View style={styles.background}>
-            <Image
-              source={selectedSlide.image} // Sử dụng hình ảnh của slide được chọn
-              style={styles.Image}
-            />
+            <Image source={selectedSlide.image} style={styles.Image} />
           </View>
         </View>
         <FlatList
-          data={currentSlides} // Sử dụng dữ liệu từ currentSlides (slides hoặc slides_khachsan)
+          data={currentSlides}
           renderItem={renderItem}
           keyExtractor={item => item.id}
           horizontal
@@ -215,6 +166,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#111418',
   },
+  pageTitle: {
+    fontSize: 32,
+    color: 'white',
+  },
   menu: {
     width: width * 0.25,
     justifyContent: 'flex-start',
@@ -223,11 +178,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   menuText: {
-    fontSize: 27,
+    fontSize: 25,
     padding: 20,
     fontWeight: 'bold',
     marginBottom: 10,
     color: 'white',
+  },
+  selectedMenuText: {
+    color: 'yellow',
   },
   content: {
     flex: 1,

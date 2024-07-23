@@ -31,6 +31,12 @@ const DuLichScreen = () => {
      navigation.navigate('DuLich_DaoKhiScreen');
    } else if (index === 2) {
      navigation.navigate('DuLich_TourUcScreen');
+   }else if (index ===3){
+    navigation.navigate('DuLich_ThacTaGuScreen');
+   } else if (index ===4){
+    navigation.navigate('DuLich_ThapBaScreen');
+   }else if (index===5){
+    navigation.navigate('DuLich_KongForestScreen');
    }
  };
 

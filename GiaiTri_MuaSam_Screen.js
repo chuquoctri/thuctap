@@ -1,116 +1,68 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import {
+  StyleSheet,
   View,
   Text,
-  StyleSheet,
   Image,
   ScrollView,
   TouchableOpacity,
   Dimensions,
-  Platform,
-  TouchableWithoutFeedback,
 } from 'react-native';
-
-const {height: windowHeight} = Dimensions.get('window');
-
 const dishes = [
   {
-    name: 'Công viên nước Golden Peak Park',
-    image: require('./assets/congvien_1.jpg'),
-    info: 'Thông tin công viên nước Golden Peak Park',
+    name: ' Nha Trang Center',
+    image: require('./assets/muasam_1.jpg'),
+    info: 'Thong tin cong vien nuoc',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
   {
-    name: 'Công viên phao nổi SeaLife Nha Trang',
-    image: require('./assets/congvien_2.jpg'),
-    info: 'Thông tin công viên phao nổi SeaLife Nha Trang',
+    name: '  Big C Nha Trang',
+    image: require('./assets/muasam_2.jpg'),
+    info: 'Th tin Công viên phao nổi SeaLife Nha Trang ',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
   {
-    name: 'Khu du lịch Waterland Suối Thạch Lâm',
-    image: require('./assets/congvien_3.jpg'),
-    info: 'Thông tin khu du lịch Waterland Suối Thạch Lâm',
+    name: 'Lotte Mart Nha Trang',
+    image: require('./assets/muasam_3.jpg'),
+    info: 'Thông tin Khu du lịch Waterland Suối Thạch Lâm',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
   {
-    name: 'Công viên nước Nha Trang',
-    image: require('./assets/congvien_4.jpg'),
+    name: 'Co.op Mart Nha Trang',
+    image: require('./assets/muasam_4.jpg'),
     info: 'Thông tin công viên nước Nha Trang',
     hours: 'Giờ mở cửa: 6:00 - 22:00',
     address: 'Địa chỉ: Số 1, Đường ABC',
   },
 ];
 
-const GiaiTri_CongVienScreen = () => {
+const GiaiTri_MuaSamScreen = () => {
   const [selectedDish, setSelectedDish] = useState(dishes[0]);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const scrollViewRef = useRef(null);
-
-  const handleKeyPress = event => {
-    if (Platform.OS === 'android') {
-      switch (event.nativeEvent.keyCode) {
-        case 19: // Arrow Up
-          setSelectedIndex(prevIndex =>
-            prevIndex > 0 ? prevIndex - 1 : dishes.length - 1,
-          );
-          break;
-        case 20: // Arrow Down
-          setSelectedIndex(prevIndex =>
-            prevIndex < dishes.length - 1 ? prevIndex + 1 : 0,
-          );
-          break;
-        case 66: // Enter/OK
-          setSelectedDish(dishes[selectedIndex]);
-          break;
-        default:
-          break;
-      }
-    }
-  };
-
-  React.useEffect(() => {
-    if (scrollViewRef.current) {
-      scrollViewRef.current.scrollTo({
-        y: selectedIndex * 60, // Adjust the scroll amount as needed
-        animated: true,
-      });
-    }
-  }, [selectedIndex]);
-
   return (
     <View style={styles.container}>
-      <TouchableWithoutFeedback>
-        <View style={styles.header}>
-          <Text style={styles.pageTitle}>Công viên</Text>
-          <View style={styles.whiteLine}></View>
-        </View>
-      </TouchableWithoutFeedback>
+      <View style={styles.header}>
+        <Text style={styles.pageTitle}>Mua sắm</Text>
+        <View style={styles.whiteLine}></View>
+      </View>
       <View style={styles.body}>
         <View style={styles.menu}>
-          <ScrollView ref={scrollViewRef}>
+          <ScrollView>
             {dishes.map((dish, index) => (
               <TouchableOpacity
                 key={index}
                 onPress={() => setSelectedDish(dish)}
-                onFocus={() => setSelectedIndex(index)}
-                style={[
-                  styles.menuItemContainer,
-                  selectedIndex === index && styles.selectedMenuItemContainer,
-                ]}
-                accessible={true}
-                accessibilityRole="button"
-                accessibilityLabel={dish.name}>
+                style={styles.menuItemContainer}>
                 <Text
                   style={[
                     styles.menuItem,
-                    selectedIndex === index && styles.selectedMenuItem,
+                    selectedDish.name === dish.name && styles.selectedMenuItem,
                   ]}>
                   {dish.name}
                 </Text>
-                {selectedIndex === index && (
+                {selectedDish.name === dish.name && (
                   <Text style={styles.menuArrow}>▶</Text>
                 )}
               </TouchableOpacity>
@@ -120,7 +72,7 @@ const GiaiTri_CongVienScreen = () => {
         <View style={styles.imageContainer}>
           <Image
             source={selectedDish.image}
-            style={[styles.image, {height: windowHeight}]}
+            style={styles.image}
             resizeMode="cover"
           />
         </View>
@@ -135,7 +87,6 @@ const GiaiTri_CongVienScreen = () => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -171,9 +122,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: 20,
   },
-  selectedMenuItemContainer: {
-    backgroundColor: '#333', // Màu nền khi được chọn
-  },
   menuItem: {
     color: 'white',
     fontSize: 17,
@@ -190,8 +138,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: '50%',
-    resizeMode: 'cover',
+    height: '97%',
   },
   infoContainer: {
     width: '40%',
@@ -220,5 +167,4 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
-
-export default GiaiTri_CongVienScreen;
+export default GiaiTri_MuaSamScreen;

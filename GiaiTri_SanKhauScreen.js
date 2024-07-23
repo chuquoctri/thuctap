@@ -155,6 +155,7 @@ const styles = StyleSheet.create({
   dishInfo: {
     color: 'white',
     marginBottom: 10,
+    height:'73%'
   },
   yellowLine: {
     height: 1,

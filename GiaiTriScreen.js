@@ -23,12 +23,22 @@ const GiaiTriScreen = () => {
 
   const handleLocationPress = index => {
     setSelectedLocationIndex(index);
-    if(index===0){
-     navigation.navigate('GiaiTri_CongVienScreen', {locations:locations[index]});
-    }else if(index===1){
-      navigation.navigate('GiaiTri_SanKhauScreen',{locations:locations[index]});
-    }else if(index===2){
-      navigation.navigate('GiaiTri_CauLacBoScreen',{locations:locations[index]});
+    if (index === 0) {
+      navigation.navigate('GiaiTri_CongVienScreen', {
+        locations: locations[index],
+      });
+    } else if (index === 1) {
+      navigation.navigate('GiaiTri_SanKhauScreen', {
+        locations: locations[index],
+      });
+    } else if (index === 2) {
+      navigation.navigate('GiaiTri_CauLacBoScreen', {
+        locations: locations[index],
+      });
+    } else if (index === 3) {
+      navigation.navigate('GiaiTri_BarScreen', {locations: locations[index]});
+    } else if (index === 4) {
+      navigation.navigate('GiaiTri_MuaSamScreen', {locations: locations[index]});
     }
    
   };
